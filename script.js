@@ -17,6 +17,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Add parallax effect to hero
   addParallaxEffect();
+
+  // Add interactive card effects
+  addCardInteractions();
+
+  // Add cursor trail effect
+  addCursorTrail();
 });
 
 // Create floating hearts
@@ -458,4 +464,127 @@ function enterSite() {
     mainContent.style.display = "block";
     window.scrollTo(0, 0);
   }, 500);
+}
+
+// Add interactive card effects
+function addCardInteractions() {
+  const cards = document.querySelectorAll('.journey-card, .love-item, .timeline-content');
+  
+  cards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      this.style.zIndex = '10';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+      this.style.zIndex = '1';
+    });
+    
+    // 3D tilt effect
+    card.addEventListener('mousemove', function(e) {
+      const rect = this.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      
+      const rotateX = (y - centerY) / 10;
+      const rotateY = (centerX - x) / 10;
+      
+      this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px) scale(1.02)`;
+    });
+    
+    card.addEventListener('mouseleave', function() {
+      this.style.transform = '';
+    });
+  });
+}
+
+// Add cursor trail effect
+function addCursorTrail() {
+  let lastX = 0;
+  let lastY = 0;
+  let isMoving = false;
+  
+  document.addEventListener('mousemove', function(e) {
+    if (!isMoving) {
+      isMoving = true;
+      
+      setTimeout(() => {
+        const trail = document.createElement('div');
+        trail.className = 'cursor-trail';
+        trail.style.left = e.pageX + 'px';
+        trail.style.top = e.pageY + 'px';
+        document.body.appendChild(trail);
+        
+        setTimeout(() => {
+          trail.remove();
+        }, 1000);
+        
+        isMoving = false;
+      }, 50);
+    }
+    
+    lastX = e.pageX;
+    lastY = e.pageY;
+  });
+}
+
+// Add sparkle effect on click
+document.addEventListener('click', function(e) {
+  createSparkle(e.pageX, e.pageY);
+});
+
+function createSparkle(x, y) {
+  for (let i = 0; i < 8; i++) {
+    const sparkle = document.createElement('div');
+    sparkle.className = 'sparkle';
+    sparkle.style.left = x + 'px';
+    sparkle.style.top = y + 'px';
+    
+    const angle = (Math.PI * 2 * i) / 8;
+    const velocity = 2;
+    sparkle.style.setProperty('--tx', Math.cos(angle) * velocity * 50 + 'px');
+    sparkle.style.setProperty('--ty', Math.sin(angle) * velocity * 50 + 'px');
+    
+    document.body.appendChild(sparkle);
+    
+    setTimeout(() => {
+      sparkle.remove();
+    }, 1000);
+  }
+}
+
+// Image modal functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const images = document.querySelectorAll('.surprise-gallery img, .gallery-item img');
+  
+  images.forEach(img => {
+    img.style.cursor = 'pointer';
+    img.addEventListener('click', function(e) {
+      e.stopPropagation();
+      openModal(this.src);
+    });
+  });
+});
+
+function openModal(src) {
+  const modal = document.createElement('div');
+  modal.className = 'image-modal';
+  modal.innerHTML = `
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <img src="${src}" alt="Full view">
+    </div>
+  `;
+  document.body.appendChild(modal);
+  
+  setTimeout(() => modal.classList.add('show'), 10);
+  
+  modal.addEventListener('click', () => closeModal(modal));
+}
+
+function closeModal(modal) {
+  modal.classList.remove('show');
+  setTimeout(() => modal.remove(), 300);
 }
