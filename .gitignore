@@ -4,6 +4,7 @@ node_modules/
 # OS files
 .DS_Store
 Thumbs.db
+TODO.md
 
 # Images (optional - these are large binary files)
 # images/
