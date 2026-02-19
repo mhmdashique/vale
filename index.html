@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy 5th Anniversary, Aachii... ❤️</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Floating Hearts Background -->
+    <div class="hearts-container" id="heartsContainer"></div>
+
+    <!-- Anniversary Landing Page -->
+    <section class="countdown-landing" id="countdownSection">
+      <div class="countdown-content">
+        <div class="countdown-heart">
+          <i class="fas fa-heart"></i>
+        </div>
+        <h1 class="countdown-title">5th Anniversary</h1>
+        <p class="countdown-date">February 18, 2025</p>
+        <p class="countdown-subtitle">Celebrating 5 years of love</p>
+
+        <button class="enter-btn" onclick="enterSite()">
+          Enter to Celebrate Love
+        </button>
+      </div>
+    </section>
+
+    <!-- Main Content (Hidden initially) -->
+    <div id="mainContent" style="display: none">
+      <!-- Hero Section -->
+      <section class="hero" id="home">
+        <div class="hero-content">
+          <div class="heart-beat">
+            <i class="fas fa-heart"></i>
+          </div>
+          <h1 class="title">Happy 5th Anniversary</h1>
+          <h2 class="subtitle">My Dearest Aachii..</h2>
+          <p class="date">February 18, 2021 - February 18, 2026</p>
+          <div class="scroll-indicator">
+            <span>Scroll to celebrate our love</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+        </div>
+      </section>
+
+      <!-- Variety Section - Our Journey Cards -->
+      <section class="variety-section" id="journey">
+        <div class="container">
+          <h2 class="section-title">Our 5 Years Journey</h2>
+          <div class="journey-grid">
+            <div class="journey-card">
+              <div class="card-icon"><i class="fas fa-star"></i></div>
+              <h3>The Beginning</h3>
+              <p>February 18, 2021</p>
+              <span class="card-badge">Year 1</span>
+            </div>
+            <div class="journey-card">
+              <div class="card-icon"><i class="fas fa-heart"></i></div>
+              <h3>First Love</h3>
+              <p>Our hearts connected</p>
+              <p>February 18, 2022</p>
+              <span class="card-badge">Year 2</span>
+            </div>
+            <div class="journey-card">
+              <div class="card-icon">
+                <i class="fas fa-hand-holding-heart"></i>
+              </div>
+              <h3>Growing Together</h3>
+              <p>Through thick and thin</p>
+              <p>February 18, 2023</p>
+              <span class="card-badge">Year 3</span>
+            </div>
+            <div class="journey-card">
+              <div class="card-icon"><i class="fas fa-infinity"></i></div>
+              <h3>Forever Love</h3>
+              <p>Unbreakable bond</p>
+              <p>February 18, 2024</p>
+              <span class="card-badge">Year 4</span>
+            </div>
+            <div class="journey-card featured">
+              <div class="card-icon"><i class="fas fa-crown"></i></div>
+              <h3>5 Years Strong</h3>
+              <p>And many more to come</p>
+              <p>February 18, 2025</p>
+              <span class="card-badge">Year 5</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Variety Section - Things We Love -->
+      <section class="variety-section light" id="thingswelove">
+        <div class="container">
+          <h2 class="section-title">Things We Love</h2>
+          <div class="love-grid">
+            <div class="love-item">
+              <i class="fas fa-utensils"></i>
+              <h3>Food Dates</h3>
+              <p>Exploring new restaurants together</p>
+            </div>
+            <div class="love-item">
+              <i class="fas fa-walkie-talkie"></i>
+              <h3>Long Talks</h3>
+              <p>Phone calls till dawn</p>
+            </div>
+            <div class="love-item">
+              <i class="fas fa-coffee"></i>
+              <h3>Coffee Dates</h3>
+              <p>Our favorite ritual</p>
+            </div>
+            <div class="love-item">
+              <i class="fas fa-music"></i>
+              <h3>Our Songs</h3>
+              <p>Playlists made for us</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Giftbox Section with Love Letter Inside -->
+      <section class="giftbox-section" id="gift">
+        <div class="container">
+          <h2 class="section-title">A Gift For You</h2>
+          <div class="giftbox-container">
+            <div class="giftbox" id="giftbox" onclick="openGiftbox()">
+              <div class="giftbox-lid"></div>
+              <div class="giftbox-body">
+                <div class="gift-ribbon"></div>
+                <div class="gift-question">Click to open!</div>
+              </div>
+            </div>
+            <div class="letter-reveal" id="letterReveal" style="display: none">
+              <div class="love-letter">
+                <div class="letter-header">
+                  <i class="fas fa-envelope-open-text"></i>
+                  <h2>A Letter for You</h2>
+                </div>
+                <div class="letter-content">
+                  <p class="salutation">My Dearest Aachii...,</p>
+                  <p>
+                    Five years ago, on this very day, my life changed forever.
+                    That was the day I found you - my soulmate, my best friend,
+                    my everything.
+                  </p>
+                  <p>
+                    Every moment with you has been a treasure. Your smile lights
+                    up my darkest days, your laughter is my favorite music, and
+                    your love is the greatest gift I've ever received.
+                  </p>
+                  <p>
+                    You've taught me what it means to love unconditionally.
+                    You've shown me that love isn't just about the happy
+                    moments, but about standing together through every storm.
+                  </p>
+                  <p>On our 5th anniversary, I want you to know:</p>
+                  <p class="highlight">
+                    You are my today and all of my tomorrows.
+                  </p>
+                  <p>
+                    Here's to five wonderful years, and to a lifetime of many
+                    more. I promise to love you more with each passing day.
+                  </p>
+                  <p class="closing">
+                    Forever yours,<br />Your loving boyfriend
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery Section -->
+      <section class="gallery-section" id="gallery">
+        <div class="container">
+          <h2 class="section-title">Our Memories</h2>
+
+          <!-- Special Locked Box with All Images -->
+          <div class="special-memory" id="specialMemory">
+            <div class="locked-box" id="lockedBox" onclick="unlockSpecial()">
+              <div class="lock-icon">
+                <i class="fas fa-lock"></i>
+              </div>
+              <p class="lock-text">Click to unlock a surprise!</p>
+            </div>
+            <div
+              class="unlocked-content"
+              id="unlockedContent"
+              style="display: none"
+            >
+              <div class="surprise-gallery">
+                <img
+                  src="images/1765495230855_1765495813661.jpg"
+                  alt="Memory 1"
+                />
+                <img src="images/1765484956688.jpg" alt="Memory 2" />
+                <img src="images/1765485459898.jpg" alt="Memory 3" />
+              </div>
+              <div class="surprise-message">
+                <h3>💕 Our Precious Memories 💕</h3>
+                <p>Every moment with you is a treasure!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer>
+        <div class="container">
+          <div class="footer-content">
+            <div class="couple-names">
+              <span class="name">Aashiq</span>
+              <span class="heart"><i class="fas fa-heart"></i></span>
+              <span class="name">Ashmi</span>
+            </div>
+            <p class="footer-text">Made with love on our 5th anniversary</p>
+            <p class="copyright">© February 18, 2025</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
